@@ -79,7 +79,7 @@ export interface Sale extends SanityDocument {
 export interface Product extends SanityDocument {
   _type: "product";
   name?: string;
-  Slug?: Slug;
+  slug?: Slug;
   image?: SanityImage;
   description?: SanityBlock[];
   price?: number;
