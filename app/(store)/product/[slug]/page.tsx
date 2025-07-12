@@ -6,9 +6,8 @@ import { Button } from "@/components/ui/button";
 import AddToBasketButton from "@/components/AddToBasketButton";
 
 
-async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-      let { slug } = await params;
-     
+async function ProductPage({ params }: { params: { slug: string } }) {
+      const { slug } = params;
       const product = await getProductBySlug(slug);
       
       if (!product) {
@@ -68,5 +67,3 @@ async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
 }
 
 export default ProductPage;
-
-
