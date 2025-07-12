@@ -1,10 +1,18 @@
 import ProductGrid from "@/components/ProductGrid";
 import { searchProductsByName } from "@/sanity/lib/products/searchProductsByName";
 
-async function SearchPage({ searchParams }: { searchParams: { query: string } }) {
-      const { query } = searchParams;
+type SearchPageProps = {
+  searchParams: {
+    query: string;
+  };
+};
+
+async function SearchPage({ searchParams }: SearchPageProps) {
+
+      const { query } = await searchParams;
+      console.log("searchParams", query);
       const products = await searchProductsByName(query);
-      console.log("SEARCH+_PRODUCTS",products)
+      
       if (!products.length) {
             return (
                   <div className="flex  flex-col items-center justify-top min-h-screen bg-gray-100 p-4">

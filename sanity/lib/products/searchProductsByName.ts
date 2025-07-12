@@ -2,6 +2,7 @@ import { defineQuery } from "next-sanity"
 import { sanityFetch } from "../live"
 import { Product } from "@/sanity.types";
 
+
 export const searchProductsByName = async (query: string): Promise<Product[]> =>{
       // Return early if the query is empty
       console.log("query", query)
@@ -15,8 +16,8 @@ export const searchProductsByName = async (query: string): Promise<Product[]> =>
       const PRODUCT_SEARCH_QUERY = defineQuery(`
   *[
     _type == "product" &&
-    productname match $name
-  ] | order(productname asc)
+    name match $name
+  ] | order(name asc)
 `);
       try{
             const products = await sanityFetch({
