@@ -36,7 +36,7 @@ function BasketPage() {
             clerkUserId: user?.id ?? "Unknown",
          }
          const checkoutUrl = await createCheckoutSession(groupedItems, metadata)
-         console.log("checkoutUrl", checkoutUrl);
+         // console.log("checkoutUrl", checkoutUrl);
          if (checkoutUrl) {
             window.location.href = checkoutUrl;
          }

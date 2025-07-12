@@ -3,7 +3,7 @@ import { CouponCode } from "./couponCode"
 import { sanityFetch } from "../live";
 import { Sale } from "@/sanity.types";
 export const getActiveSaleByCouponCode=async(couponCode:CouponCode): Promise<Sale | null>=>{
-console.log("Fetching active sale by coupon code:", couponCode);
+// console.log("Fetching active sale by coupon code:", couponCode);
 
 const ACTIVE_SALE_BY_COUPON_QUERY = defineQuery(`
       *[

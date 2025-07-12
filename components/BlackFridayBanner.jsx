@@ -5,7 +5,7 @@ async function BlackFridayBanner() {
    if (!sale.isActive) {
       return null;
    }
-   console.log("sale", sale)
+ 
    return (
       <div className="bg-gradient-to-r ml-0.5 from-red-800 to-black text-white p-6 rounded-lg shadow-md">
          <h2 className="text-2xl font-bold">{sale?.title}</h2>

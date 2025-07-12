@@ -8,10 +8,9 @@ import AddToBasketButton from "@/components/AddToBasketButton";
 
 async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
       let { slug } = await params;
-      console.log("slug", slug)
-      console.log("params", params)
+     
       const product = await getProductBySlug(slug);
-      console.log("slug product", product);
+      
       if (!product) {
             return (
                   <div className="flex items-center justify-center min-h-screen bg-gray-100">
