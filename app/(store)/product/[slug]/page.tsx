@@ -2,11 +2,14 @@ import React from "react";
 import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { imageUrl } from "@/lib/imageUrl";
 import { PortableText } from "next-sanity";
-import { Button } from "@/components/ui/button";
 import AddToBasketButton from "@/components/AddToBasketButton";
 
-
-async function ProductPage({ params }: { params: { slug: string } }) {
+interface SlugPageProps {
+  params: {
+    slug: string;
+  };
+}
+async function ProductPage({ params }: SlugPageProps) {
       const { slug } = params;
       const product = await getProductBySlug(slug);
       
