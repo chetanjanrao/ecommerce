@@ -1,20 +1,12 @@
 import ProductGrid from "@/components/ProductGrid";
 import { searchProductsByName } from "@/sanity/lib/products/searchProductsByName";
 
-type SearchPageProps = {
-  // Use a more comprehensive type for searchParams to satisfy Next.js's internal PageProps constraint.
-  // This type accounts for:
-  // - Any possible string key from a URL search parameter.
-  // - Values that could be a single string, an array of strings (e.g., ?foo=1&foo=2), or undefined (if the param isn't present).
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-async function SearchPage({ searchParams }: SearchPageProps) {
-  // Access the query.
-  // We use type assertion `as string` or check `typeof query === 'string'`
-  // because searchParams.query could technically be `string[]` or `undefined`
-  // based on the robust type definition, even if you only expect a single string.
-  const query = (searchParams.query as string) || "";
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
+  const query = (searchParams?.query as string) || "";
   const products = await searchProductsByName(query);
 
   return (
@@ -41,5 +33,3 @@ async function SearchPage({ searchParams }: SearchPageProps) {
     </div>
   );
 }
-
-export default SearchPage;
