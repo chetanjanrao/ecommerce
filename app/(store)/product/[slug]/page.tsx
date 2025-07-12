@@ -3,12 +3,12 @@ import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { imageUrl } from "@/lib/imageUrl";
 import { PortableText } from "next-sanity";
 import AddToBasketButton from "@/components/AddToBasketButton";
-
-interface SlugPageProps {
-  params: {
-    slug: string;
-  };
-}
+import { SlugPageProps } from "@/sanity.types";
+// interface SlugPageProps {
+//   params: {
+//     slug: string;
+//   };
+// }
 async function ProductPage({ params }: SlugPageProps) {
       const { slug } = params;
       const product = await getProductBySlug(slug);

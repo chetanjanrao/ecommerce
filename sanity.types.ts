@@ -13,6 +13,11 @@ export interface SanityBlock {
   markDefs: any[];
   style: string;
 }
+export interface SlugPageProps {
+  params: {
+    slug: string;
+  };
+}
 export interface PageProps {
   /**
    * Route segment params (e.g., from [...slug], [id], etc.)
