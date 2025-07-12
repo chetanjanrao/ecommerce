@@ -1,10 +1,8 @@
 import ProductGrid from "@/components/ProductGrid";
 import { searchProductsByName } from "@/sanity/lib/products/searchProductsByName";
+import { PageProps } from "@/sanity.types";
 
 
-interface PageProps {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
 
 export default async function SearchPage({ searchParams }: PageProps) {
   const query = (searchParams?.query as string) || "";
