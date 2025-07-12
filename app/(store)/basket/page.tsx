@@ -71,7 +71,7 @@ function BasketPage() {
                         className="mb-4 p-4 border rounded flex items-center justify-between"
                      >
                         <div className="flex items-center cursor-pointer flex-1 min-w-0"
-                           onClick={() => router.push(`/product/${item.product.Slug?.current}`)}
+                           onClick={() => router.push(`/product/${item.product.slug?.current}`)}
                         >
                            <div className="w-20 h-20 sm:-24 flex-shrink-0 mr-4">
                               {
