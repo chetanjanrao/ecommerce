@@ -4,9 +4,13 @@ import { imageUrl } from "@/lib/imageUrl";
 import { PortableText } from "next-sanity";
 import AddToBasketButton from "@/components/AddToBasketButton";
 // import { SlugPageProps } from "@/sanity.types";
-type SlugPageProps = Promise<{slug : string}>;
-async function ProductPage( params : {props: SlugPageProps} ) {
-      const slug : string =  params.props;
+ interface SlugPageProps {
+   params: {
+     slug: string;
+   };
+ }
+async function ProductPage({ params }: SlugPageProps) {
+      const { slug } = params;
       const product = await getProductBySlug(slug);
       
       if (!product) {
