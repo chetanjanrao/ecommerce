@@ -15,7 +15,7 @@ import "server-only"
 
 // set your viewer tocken
 
-const token = process.env.SANITY_API_READ_TOCKEN;
+const token = process.env.SANITY_API_READ_TOKEN;
 if(!token){
   throw new Error('SANITY_API_READ_TOCKEN is not set')
 }
