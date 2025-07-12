@@ -13,7 +13,18 @@ export interface SanityBlock {
   markDefs: any[];
   style: string;
 }
+export interface PageProps {
+  /**
+   * Route segment params (e.g., from [...slug], [id], etc.)
+   */
+  params?: { [key: string]: string };
 
+  /**
+   * Query string parameters from the URL
+   * (e.g., ?query=shoes&category=sale)
+   */
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 export interface SanityDocument {
   _id: string;
   _type: string;
