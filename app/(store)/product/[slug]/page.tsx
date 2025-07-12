@@ -6,7 +6,7 @@ import AddToBasketButton from "@/components/AddToBasketButton";
 // import { SlugPageProps } from "@/sanity.types";
 type SlugPageProps = Promise<{slug : string}>;
 async function ProductPage( params : {props: SlugPageProps} ) {
-      const { slug } = await params.props;
+      const slug : string =  params.props;
       const product = await getProductBySlug(slug);
       
       if (!product) {
