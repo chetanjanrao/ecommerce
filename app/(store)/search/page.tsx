@@ -9,8 +9,9 @@ type SearchPageProps = {
 
 async function SearchPage({ searchParams }: SearchPageProps) {
 
-      const { query } = await searchParams;
-      console.log("searchParams", query);
+      const params =await searchParams;
+      const query = params.query || "";
+      // console.log("searchParams", query);
       const products = await searchProductsByName(query);
       
       if (!products.length) {
