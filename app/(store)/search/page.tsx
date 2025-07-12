@@ -9,12 +9,7 @@ type SearchPageProps = {
 
 async function SearchPage({ searchParams }: SearchPageProps) {
   const query = searchParams.query || "";
-  let products : any = [];
-  try {
-    products = await searchProductsByName(query);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
+  const products = await searchProductsByName(query);
 
   return (
     <div className="flex flex-col items-center justify-top min-h-screen bg-gray-100 p-4">
